@@ -10,14 +10,89 @@
         <title>Select Location</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="public/results.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Zeyada">
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css' integrity='sha512-AZtJoEn5SfSZimv10x5NMO2gaZCdoU8nxtHJK8O4SbKNlQeb1ggkvf0b0QixuuXIjX3Tp5jzBbTWajki81Vl2g==' crossorigin='anonymous'/>
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
     </head>
     <body>
-        <script src="" async defer></script>
+
+        <div id="buttonRow" class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 col">
+                    <div class="btn">Filter by:</div>
+                </div>
+                <div class="col-md-4 col">
+                    <div class="btn">Search Again</div>
+                </div>
+                <div class="col-md-4 col">
+                    <div class="btn">Export</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <!--Filters-->
+                </div>
+                <div class="col-md-8">
+                    <div id="resource" class="card">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-sm-1">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                </div>
+                                <div class="col-sm-11">
+                                    <h1>Resource name</h1>
+                                </div>
+                            <h1></h1>
+                            </div>
+                        </div>
+                        <div class="card-body row">
+                            <div class="col-lg-8">
+                                <p class="card-text">Description of resource</p>
+                            </div>
+                            <div class="col-lg-4">
+                                Schedule
+                                <ul>
+                                    <li>Monday 8am-5pm</li>
+                                    <li>Tuesday 8am-5pm</li>
+                                    <li>Wednesday 8am-5pm</li>
+                                    <li>Thursday 8am-5pm</li>
+                                    <li>Friday 8am-5pm</li>
+                                    <li>Saturday 8am-5pm</li>
+                                    <li>Sunday 8am-5pm</li>
+                                </li>
+                            </div>
+                          <a href="#" class="btn btn-primary">See more</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <script src="scripts/app.js" async defer></script>
         <script defer src="/__/firebase/10.4.0/firebase-app-compat.js"></script>
         <script defer src="/__/firebase/init.js?useEmulator=true"></script>
