@@ -19,9 +19,7 @@
 
         <div id="buttonRow" class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col">
-                    <div class="btn">Filter by:</div>
-                </div>
+                <div class="col-md-4 col"></div>
                 <div class="col-md-4 col">
                     <div class="btn">Search Again</div>
                 </div>
@@ -34,17 +32,37 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4">
-                    <!--Filters-->
+
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          Filter by:
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <div class="row dropdown-item">
+                                <div class="col-sm-1">
+                                    <input class="form-check-input" type="checkbox" value="">Filter 1
+                                </div>
+                                <div class="col-sm-11">
+                                    <h2">Resource 2</h2>
+                                </div>
+                            </div>
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </div>
+
+
                 </div>
                 <div class="col-md-8">
                     <div id="resource" class="card">
                         <div class="card-header">
-                            <div class="row">
+                            <div id="resource-header" class="row">
                                 <div class="col-sm-1">
                                     <input class="form-check-input" type="checkbox" value="">
                                 </div>
                                 <div class="col-sm-11">
-                                    <h1>Resource name</h1>
+                                    <h2 id="resource-name">Resource 1</h2>
                                 </div>
                             <h1></h1>
                             </div>
@@ -55,19 +73,49 @@
                             </div>
                             <div class="col-lg-4">
                                 Schedule
+                            </div>
+
+                          <a href="#" id="see-more" class="btn btn-primary">See more</a>
+                        </div>
+                    </div>
+
+                    <div id="resource" class="card">
+                        <div class="card-header">
+                            <div id="resource-header" class="row">
+                                <div class="col-sm-1">
+                                    <input class="form-check-input" type="checkbox" value="">
+                                </div>
+                                <div class="col-sm-11">
+                                    <h2 id="resource-name">Resource 2</h2>
+                                </div>
+                            <h1></h1>
+                            </div>
+                        </div>
+                        <div class="card-body row">
+                            <div class="col-lg-8">
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis venenatis lacinia odio vel bibendum. Suspendisse porta lacus consequat urna commodo, eget venenatis velit elementum. Aenean vel erat non risus interdum sagittis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras vel eleifend orci, et iaculis tellus. Nullam eget ligula vitae arcu ullamcorper facilisis. Nulla tincidunt, risus eu ultrices mattis, tellus felis lobortis neque, non hendrerit lectus orci et odio. Suspendisse at finibus justo, ac viverra libero. Ut at euismod orci, sed pulvinar ipsum.</p>
                                 <ul>
-                                    <li>Monday 8am-5pm</li>
-                                    <li>Tuesday 8am-5pm</li>
-                                    <li>Wednesday 8am-5pm</li>
-                                    <li>Thursday 8am-5pm</li>
-                                    <li>Friday 8am-5pm</li>
-                                    <li>Saturday 8am-5pm</li>
-                                    <li>Sunday 8am-5pm</li>
+                                    <li>Application process: fill out online form</li>
+                                    <li>Elgibility: Living in Delaware, Grant, Madison, or Tipton County </li>
+                                    <li>Document: Photo ID -- Proof of resodency</li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-4">
+                                Schedule
+                                <ul>
+                                    <li>Monday: 8AM-5PM</li>
+                                    <li>Tuesday: 8AM-5PM</li>
+                                    <li>Wednesday: 8AM-5PM</li>
+                                    <li>Thursday: 8AM-5PM</li>
+                                    <li>Friday: 8AM-5PM</li>
+                                    <li>Saturday: 8AM-5PM</li>
+                                    <li>Sunday: 8AM-5PM</li>
                                 </li>
                             </div>
-                          <a href="#" class="btn btn-primary">See more</a>
+
+                          <a href="#" id="see-more" class="btn btn-primary">See less</a>
                         </div>
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -96,9 +144,8 @@
         <script src="scripts/app.js" async defer></script>
         <script defer src="/__/firebase/10.4.0/firebase-app-compat.js"></script>
         <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js' integrity='sha512-X/YkDZyjTf4wyc2Vy16YGCPHwAY8rZJY+POgokZjQB2mhIRFJCckEGc6YyX9eNsPfn0PzThEuNs+uaomE5CO6A==' crossorigin='anonymous'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js' integrity='sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==' crossorigin='anonymous'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js' integrity='sha512-rXm6RiYDlz+aZC/ht75tGzeAmCg4gVfBA6Be5s5uENSahiXkgwEy10J2Cc+dxUAW4lRRQYbS5pugMOqBrs8ksw==' crossorigin='anonymous'></script>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js' integrity='sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==' crossorigin='anonymous'></script>
     </body>
 </html>

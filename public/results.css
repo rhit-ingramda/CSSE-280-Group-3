@@ -1,0 +1,16 @@
+#see-more{
+    width: auto;
+}
+
+#resource-header{
+    height: 30px;
+}
+
+.card-header{
+    padding-top: 0px !important;
+}
+
+.form-check-input{
+    scale: 2;
+    margin-top: 10px !important;
+}
