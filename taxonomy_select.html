@@ -12,79 +12,90 @@
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous'/>
     </head>
     <body>
-        <!-- Search again button (change location)-->
-        <!-- Dropdowns (3 tiers)-->
-        <nav class="navbar navbar-dark bg-dark text-light">
-            <div class="nav-item container-fluid justify-content-center">
-                <a class="navbar-brand" href="#">IN 211</a>
+        <!-- Navbar (Existing from IN211 Website)-->
+        <nav class="navbar navbar-dark bg-info">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">IN 2-1-1</a>
             </div>
-            <!-- Search bar for zip code-->
         </nav>
 
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-              data-mdb-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Submenu &raquo;</a>
-                <ul class="dropdown-menu dropdown-submenu">
-                  <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
-                  <li><a class="dropdown-item" href="#">Submenu item 2</a></li>
-                  <li><a class="dropdown-item" href="#">Submenu item 3 &raquo; </a>
-                    <ul class="dropdown-menu dropdown-submenu">
-                      <li><a class="dropdown-item" href="#">Multi level 1</a></li>
-                      <li><a class="dropdown-item" href="#">Multi level 2</a></li>
+        <!-- Main Page -->
+        <div class="container">
+            <div class="row bg-secondary">
+                <div class="dropdown col-md-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Food
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Subcategory 1</a></li>
+                      <li><a class="dropdown-item" href="#">Subcategory 2</a>
+                        <ul class="dropdown-submenu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Subcategory 1</a></li>
+                            <li><a class="dropdown-item" href="#">Subcategory 2</a></li>
+                            <li><a class="dropdown-item" href="#">Subcategory 3</a></li>
+                          </ul></li>
+                      <li><a class="dropdown-item" href="#">Subcategory 3</a>
+                        <ul class="dropdown-submenu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="#">Subcategory 1</a></li>
+                            <li><a class="dropdown-item" href="#">Subcategory 2</a></li>
+                            <li><a class="dropdown-item" href="#">Subcategory 3</a></li>
+                          </ul></li>
                     </ul>
-                  </li>
-                  <li><a class="dropdown-item" href="#">Submenu item 4</a></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Submenu item 5</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+                  </div>
+                  <div class="dropdown col-md-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Taxes
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Subcategory 1</a></li>
+                      <li><a class="dropdown-item" href="#">Subcategory 2</a></li>
+                      <li><a class="dropdown-item" href="#">Subcategory 3</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown col-md-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Health
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Subcategory 1</a></li>
+                      <li><a class="dropdown-item" href="#">Subcategory 2</a></li>
+                      <li><a class="dropdown-item" href="#">Subcategory 3</a></li>
+                    </ul>
+                  </div>
+                  <div class="dropdown col-md-3">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Other
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Subcategory 1</a></li>
+                      <li><a class="dropdown-item" href="#">Subcategory 2</a></li>
+                      <li><a class="dropdown-item" href="#">Subcategory 3</a></li>
+                    </ul>
+                  </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 order-md-1 mb-6">
+                    <h4 class="fw-bold">Change zip code here:</h4>
+                    <div class="input-group col-sm-7">
+                        <input id="postal" type="text" aria-label="zip code" maxlength="5"
+                        size="5" required name="postal" placeholder="Insert Zip Code...">
+                    </div>
+                </div>
+                <div class="col-md-6 order-md-2 mb-6">
+                    <h4 class="fw-bold">Change county here:</h4>
+                    <div class="input-group col-sm-7">
+                        <input id="postal" type="text" aria-label="zip code" 
+                         required name="postal" placeholder="Insert County..." >
+                    </div>
+                </div>
+            </div>
 
-        <div class="container-fluid justify-content-center">
-            <div class="dropdown dropdown-menu">
-                <ul>
-                    <li><a class="dropdown-item" href="#">Option 1</a></li>
-                    <li><a class="dropdown-item" href="#">Option 2</a></li>
-                    <li><a class="dropdown-item" href="#">Option 3</a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Option 1</a></li>
-                            <li><a class="dropdown-item" href="#">Option 2</a></li>
-                            <li><a class="dropdown-item" href="#">Option 3</a></li>
-                        </ul></li>
-                </ul>    
-            </div>
+
+            <br>
+            <p>Welcome to Indiana 211, your front door to state and local resources.</p>
+            <p>Indiana 211 is a free and confidential service that helps Hoosiers across Indiana find the local resources they need. Dial 2-1-1 or 866-211-9966 to connect with a navigator. We're here for you 24 hours a day, 7 days a week.</p>
+            <p>If you or someone you know is in crisis, call or text 988 to reach the Suicide and Crisis Lifeline, chat with them online via their website, or text HOME to 741741 (multiple languages available). If this is an emergency, call 911.</p>
         </div>
-        <hr>
-        <!-- Rest of Page??? - Maybe Text talking about commonly used resources or resource options?-->
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Select an option
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <!-- Dropdown items go here -->
-                <a class="dropdown-item" href="#">Option 1</a>
-                <a class="dropdown-item" href="#">Option 2</a>
-                <a class="dropdown-item" href="#">Option 3</a>
-            </div>
-        </div>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
 
           <script src="scripts/app.js" async defer></script>
           <script defer src="/__/firebase/10.4.0/firebase-app-compat.js"></script>
