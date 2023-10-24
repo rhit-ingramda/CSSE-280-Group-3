@@ -10,7 +10,11 @@
     padding-top: 0px !important;
 }
 
-.form-check-input{
+#resource-checkbox{
     scale: 2;
     margin-top: 10px !important;
+}
+
+#filterCheckbox{
+    margin-left: 10px;
 }
