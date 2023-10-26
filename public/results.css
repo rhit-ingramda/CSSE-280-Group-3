@@ -1,3 +1,18 @@
+:root {
+    --dark_blue: #005191;
+    --light_blue: #539ED0;
+    --yellow_orange: #FFB351;
+    --red: #FF443B;
+    --black: #000000;
+    --white: #FFFFFF;
+    --font: Roboto; 
+}
+
+
+
+
+
+
 #see-more{
     width: auto;
 }
