@@ -34,21 +34,19 @@
                 <div class="col-md-4">
 
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"  data-bs-auto-close="false" aria-expanded="false">
                           Filter by:
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <div class="row dropdown-item">
-                                <div class="col-sm-1">
-                                    <input class="form-check-input" type="checkbox" value="">Filter 1
-                                </div>
-                                <div class="col-sm-11">
-                                    <h2">Resource 2</h2>
-                                </div>
-                            </div>
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                    <li>
+                                        <input id="filterCheckbox" class="form-check-input" type="checkbox" value="">Filter 1
+                                    </li>
+                                    <li>
+                                        <input id="filterCheckbox" class="form-check-input" type="checkbox" value="">Filter 2
+                                    </li>
+                                    <li>
+                                        <div class="btn">Apply Filters</div>
+                                    </li>
                         </ul>
                       </div>
 
@@ -59,7 +57,7 @@
                         <div class="card-header">
                             <div id="resource-header" class="row">
                                 <div class="col-sm-1">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input id="resource-checkbox" class="form-check-input" type="checkbox" value="">
                                 </div>
                                 <div class="col-sm-11">
                                     <h2 id="resource-name">Resource 1</h2>
@@ -83,7 +81,7 @@
                         <div class="card-header">
                             <div id="resource-header" class="row">
                                 <div class="col-sm-1">
-                                    <input class="form-check-input" type="checkbox" value="">
+                                    <input id="resource-checkbox" class="form-check-input" type="checkbox" value="">
                                 </div>
                                 <div class="col-sm-11">
                                     <h2 id="resource-name">Resource 2</h2>
