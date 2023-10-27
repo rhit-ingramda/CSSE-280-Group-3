@@ -21,14 +21,22 @@
         </div>
     </nav>
 
-    <div class="row bg-secondary">
+    <div class="row bg-secondary d-flex justify-content-center">
         <div class="row">
-            <div class="col-md-6 order-md-1 mb-6">
+            <div class="col-4 text-center">
+                <!-- Accept zip code, county, or city -->
                 <h4 class="fw-bold">Enter zip code, county, or city here:</h4>
-                <div class="input-group">
-                    <input id="postal" type="text" aria-label="zip code" maxlength="5"
-                    size="5" required name="postal" placeholder="Insert Location...">
+            </div>
+            <div class="col-4">
+                <div class="input-group text-center mx-auto">
+                    <input id="postal" type="text" aria-label="zip code"
+                        size="15" required name="postal" placeholder="Insert Location...">
                 </div>
+            </div>
+            <div class="col-4 text-center mx-auto">
+                <button class="btn btn-primary" type="button" id="searchButton">
+                    Search
+                </button>
             </div>
         </div> <!-- End of row -->
 
