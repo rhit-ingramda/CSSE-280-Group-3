@@ -1,5 +1,22 @@
 const locationSearchBox = document.getElementById('postal');
+const searchButton = document.getElementById('searchButton');
 let criterias = [];
+
+const categoryElements = document.querySelectorAll("div#categoryDropdown div#subCategory");
+let categories = [];
+for (const elem of categoryElements){
+    checkBox = elem.children[0];
+    checkBox.addEventListener('click', function() {
+        checkBox.checked = !checkBox.checked;
+        console.log(checkBox.checked);
+        if (checkBox.checked){
+            text = elem.childNodes[2]
+            console.log(text);
+            categories.push(elem.childNodes[2])
+        }
+    })
+    console.log(checkBox);
+}
 
 postal.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -9,6 +26,12 @@ postal.addEventListener('keypress', function (e) {
                         element: newCriteriaBox});
         locationSearchBox.value = "";
       }
+});
+
+searchButton.addEventListener('click', function() {
+    for (const criteria of criterias){
+        console.log(`Criteria: ${criteria.criteria}`);
+    }
 });
 
 function drawCriteriaRectangle(criteria) {
