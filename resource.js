@@ -14,11 +14,21 @@ const readResources = async () => {
 
 function filterResources(resources) {
     console.log(criterias);
-    for(const criteria of criterias){
+    if(criterias.length == 0){
+        return resources;
+    } else{
         resources = resources.filter(function(resource) {
-            console.log(resource.zipcode, criteria.criteria);
-            return resource.zipcode == parseInt(criteria.criteria);
+            meetsCriteria = false;
+            for(const criteria of criterias){
+                if(parseInt(criteria.criteria)){
+                    meetsCriteria = meetsCriteria || resource.zipcode == parseInt(criteria.criteria);
+                } else{
+                    meetsCriteria = meetsCriteria || resource.city == criteria.criteria;
+                    meetsCriteria = meetsCriteria || resource.county == criteria.criteria;
+                }
+            }
+            return meetsCriteria;
         })
+        return resources;
     }
-    return resources;
 }
