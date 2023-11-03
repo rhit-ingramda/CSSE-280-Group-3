@@ -3,20 +3,37 @@ const searchButton = document.getElementById('searchButton');
 let criterias = [];
 
 const categoryElements = document.querySelectorAll("div#categoryDropdown div#subCategory");
+let categoryObjects = [];
+for (const elem of categoryElements){
+    categoryObjects.push({
+        elem: elem,
+        isChecked: false
+    })
+}
 let categories = [];
 
-for (const elem of categoryElements){
-    checkBox = elem.children[0];
+for (const obj of categoryObjects){
+    checkBox = obj.elem.children[0];
     checkBox.addEventListener('click', function() {
-        checkBox.checked = !checkBox.checked;
-        console.log(checkBox.checked);
-        if (checkBox.checked){
-            text = elem.childNodes[2]
+        //change the state of the checkBox
+        obj.isChecked = !obj.isChecked;
+        console.log(obj.isChecked);
+        console.log(obj.elem);
+        //get the plain text of the category whose checkBox has been clicked
+        text = obj.elem.childNodes[2].data.trim();
+        //if the checkBox has been checked...
+        if (obj.isChecked){
+            text = obj.elem.childNodes[2].data.trim();
             console.log(text);
-            categories.push(elem.childNodes[2])
+            //push this string onto the list of checked categories
+            categories.push(text);
+        } else  {
+            // if the checkbox has been unclicked, remove the category from the list
+            // the category should be guaranteed to already be in the list.
+            removeCategory(text);
         }
+        console.log(categories);
     })
-    console.log(checkBox);
 }
 
 postal.addEventListener('keypress', function (e) {
@@ -32,6 +49,9 @@ postal.addEventListener('keypress', function (e) {
 searchButton.addEventListener('click', function() {
     for (const criteria of criterias){
         console.log(`Criteria: ${criteria.criteria}`);
+    }
+    for (const category of categories){
+        console.log(`Category: ${category}`);
     }
 });
 
@@ -73,6 +93,14 @@ function removeCriteria(criteriaToRemove) {
             return false;
         }
         return true;
+    })
+}
+
+function removeCategory(categoryToRemove) {
+    console.log(`removing category: ${categoryToRemove}`);
+    categories = categories.filter(function(category) {
+        console.log(category);
+        return category !== categoryToRemove;
     })
 }
 
