@@ -11,13 +11,13 @@ const readResources = async () => {
     }
     // Need to catch the promises
     resources = await response.json();
-    resources = filterResources(resources);
+    resources = filterResourcesByCriteria(resources);
+    resources = filterResourcesByCategory(resources);
     console.log(resources);
     createResourceCards(resources);
-    console.log(resources);
 }
 
-function filterResources(resources) {
+function filterResourcesByCriteria(resources) {
     console.log(criterias);
     if(criterias.length == 0){
         return resources;
@@ -38,11 +38,44 @@ function filterResources(resources) {
     }
 }
 
+function filterResourcesByCategory(resources) {
+    console.log(categories);
+    if(categories.length == 0){
+        return resources;
+    } else{
+        resources = resources.filter(function(resource) {
+            meetsCriteria = false;
+            for(const category of categories){
+                if(category.includes('Other')){
+                    superCategory = category.split(' Other')[0];
+                    let meetsOtherCriteria = true;
+                    for (const category of populateTax.categories){
+                        if(superCategory == 'OTHER'){
+                            meetsOtherCriteria = meetsOtherCriteria && resource.taxonomy_category !== category.mainCategory;
+                        } else{
+                            if(category.mainCategory.toUpperCase() == superCategory.toUpperCase()){
+                                for(const subCategory in category.subCategories){
+                                    meetsOtherCriteria = meetsOtherCriteria && resource.taxonomy_name !== subCategory;
+                                }
+                                meetsOtherCriteria = meetsOtherCriteria && resource.taxonomy_category == category.mainCategory;
+                            }
+                        }
+                    };
+                    meetsCriteria = meetsCriteria || meetsOtherCriteria;
+                } else{
+                    meetsCriteria = meetsCriteria || resource.taxonomy_category == category;
+                    meetsCriteria = meetsCriteria || resource.taxonomy_name == category;
+                }
+            }
+            return meetsCriteria;
+        })
+        return resources;
+    }
+}
+
 function createResourceCards(resources) {
     for (const resource of resources) {
-        console.log(resource);
         const resourceCard = createCard(resource)
-        console.log(resourceCard);
         resourcesContainer.appendChild(resourceCard);
         // const card = document.createElement('div');
         // card.className = 'card resourceCard';
@@ -84,61 +117,4 @@ function createCard(resource) {
         </div>
     `;
     return card;
-}
-
-// Creates card header and appends it to the card (CURRENTLY UNUSED)
-function createCardHeader(resource, card) {
-    const header = document.createElement('div');
-    header.className = 'card-header';
-    card.appendChild(header);
-    const resourceHeader  = document.createElement('div');
-    resourceHeader.className = 'row resource-header';
-    header.appendChild(resourceHeader);
-    const resourceCheckboxContainer = document.createElement('div');
-    resourceCheckboxContainer.className = 'col-sm-11';
-    resourceHeader.appendChild(resourceCheckboxContainer);
-    const checkboxInput = document.createElement('input');
-    checkboxInput.className = 'form-check-input';
-    checkboxInput.type = 'checkbox';
-    checkboxInput.value = '';
-    resourceCheckboxContainer.append(checkboxInput);
-    const resourceNameContainer = document.createElement('div');
-    resourceNameContainer.className = 'col-sm-11';
-    resourceHeader.appendChild(resourceNameContainer);
-    const resourceName = document.createElement('h2');
-    resourceName.className = 'resource-name';
-    resourceName.innerHTML = resource.agency_name;
-    resourceNameContainer.appendChild(resourceName);
-}
-
-// Creates card header and appends it to the card (CURRENTLY UNUSED)
-function createCardBody(resource, card) {
-    const cardBody = document.createElement('div');
-    cardBody.className = 'card-body row';
-    card.appendChild(cardBody);
-
-    cardBody.innerHTML = `
-    <div class="card-body row">
-        <div class="col-lg-8">
-            <p class="card-text">${resource.service_description}</p>
-            <ul>
-                <li>Application process: fill out online form</li>
-                <li>Elgibility: Living in Delaware, Grant, Madison, or Tipton County </li>
-                <li>Document: Photo ID -- Proof of resodency</li>
-            </ul>
-        </div>
-        <div class="col-lg-4">
-            <p>Schedule:</p>
-            <p>Insert Schedule Here</p>
-        </div>
-        <a href="#" id="see-more" class="btn btn-primary">See less</a>
-    </div>
-    `;
-    // const firstColumn = document.createElement('div');
-    // firstColumn.className = 'col-lg-8';
-    // cardBody.appendChild(firstColumn);
-
-    // const secondColumn = document.createElement('div');
-    // secondColumn.className = 'col-lg-8';
-    // cardBody.appendChild(secondColumn);
 }

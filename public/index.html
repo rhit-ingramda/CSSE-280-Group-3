@@ -40,96 +40,8 @@
             </div>
         </div> <!-- End of row -->
 
-        <div class="row">
-            <div id="categoryDropdown" class="dropdown col-md-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Food
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 1
-                        </div>
-                    </div>
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 2
-                        </div>
-                    </div>
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 3
-                        </div>
-                    </div>
-                </ul>
-              </div>
-              <div id="categoryDropdown" class="dropdown col-md-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Taxes
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 4
-                        </div>
-                    </div>
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 5
-                        </div>
-                    </div>
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 6
-                        </div>
-                    </div>
-                </ul>
-              </div>
-              <div id="categoryDropdown" class="dropdown col-md-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Health
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 7
-                        </div>
-                    </div>
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 8
-                        </div>
-                    </div>
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 9
-                        </div>
-                    </div>
-                </ul>
-              </div>
-              <div id="categoryDropdown" class="dropdown col-md-3">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Other
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 10
-                        </div>
-                    </div>
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 11
-                        </div>
-                    </div>
-                    <div class="row dropdown-item">
-                        <div id="subCategory" class="col-sm-1">
-                            <input class="form-check-input" type="checkbox" value="">Subcategory 12
-                        </div>
-                    </div>
-                </ul>
-              </div>
-        </div> <!-- End of row -->
+        <div id="dropdownRow" class="row">
+        </div>
     </div>
 
 
@@ -156,31 +68,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="resourcesContainer"></div>
-                <!-- <div class="col-md-4">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                          Filter by:
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <div class="row dropdown-item">
-                                <div class="col-sm-1">
-                                    <input class="form-check-input" type="checkbox" value="">Filter 1
-                                </div>
-                                <div class="col-sm-11">
-                                    <h2">Resource 2</h2>
-                                </div>
-                            </div>
-                          <li><a class="dropdown-item" href="#">Action</a></li>
-                          <li><a class="dropdown-item" href="#">Another action</a></li>
-                          <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-8" id="resourcesContainer"></div> -->
             </div>
         </div>    
     </div>
 
+    <script src="scripts/populateTax.js" defer></script>
     <script src="scripts/postal.js" defer></script>
     <script src="scripts/resource.js" defer></script>
     <script defer src="/__/firebase/10.4.0/firebase-app-compat.js"></script>

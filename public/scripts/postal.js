@@ -2,7 +2,7 @@ const locationSearchBox = document.getElementById('postal');
 const searchButton = document.getElementById('searchButton');
 const introText = document.getElementById('introText');
 let criterias = [];
-
+populateTax.populate();
 const categoryElements = document.querySelectorAll("div#categoryDropdown div#subCategory");
 let categoryObjects = [];
 for (const elem of categoryElements){
@@ -24,7 +24,14 @@ for (const obj of categoryObjects){
         text = obj.elem.childNodes[2].data.trim();
         //if the checkBox has been checked...
         if (obj.isChecked){
+            console.log(obj.elem.childNodes[2]);
             text = obj.elem.childNodes[2].data.trim();
+            if(text == 'Other'){
+                // if this category is 'other', get the parent category and tag the category with it for filtering
+                superCategory = obj.elem.parentNode.parentNode.parentNode.childNodes[1].innerText;
+                console.log(superCategory);
+                text = superCategory + text;
+            }
             console.log(text);
             //push this string onto the list of checked categories
             categories.push(text);
