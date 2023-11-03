@@ -81,7 +81,7 @@ function getNewCriteriaBox() {
 
 function getNewCriteriaX() {
     const newCriteriaX = document.createElement("img");
-    newCriteriaX.src = "public/images/X.png";
+    newCriteriaX.src = "images/X.png";
     newCriteriaX.id = "locationCriteriaX";
     newCriteriaX.classList.add("col-sm-1");
     return newCriteriaX;
