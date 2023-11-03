@@ -69,16 +69,15 @@ function createCard(resource) {
         </div>
         <div class="card-body row">
             <div class="col-lg-8">
-                <p class="card-text agency-description">About the agency: ${resource.agency_desc}</p>
-                <p class="card-text service-description">Services: ${resource.service_description}</p>
-                <ul>
-                    <li>Application process: ${resource.site_details}</li>
-                    <li>Elgibility: ${resource.site_eligibility}</li>
-                    <li>Document: Photo ID -- Proof of residency</li>
-                </ul>
+                <p class="card-text agency-description"><b>About the agency:</b> ${resource.agency_desc}</p>
+                <p class="card-text service-description"><b>Services:</b> ${resource.service_description}</p>
             </div>
             <div class="col-lg-4">
-                <p>Schedule: ${resource.site_schedule}</p>
+                <p><b>Schedule:</b> ${resource.site_schedule}</p>
+                <ul>
+                    <li><b>Application process:</b> ${resource.site_details}</li>
+                    <li><b>Elgibility:</b> ${resource.site_eligibility}</li>
+                </ul>
             </div>
 
             <a href="#" class="btn btn-primary see-more">See less</a>

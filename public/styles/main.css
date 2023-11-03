@@ -70,6 +70,10 @@ body{
     background-color: var(--light_blue);
 }
 
+.resource-name {
+    font-size: 20px;
+}
+
 #see-more{
     background-color: var(--yellow_orange);
 }
