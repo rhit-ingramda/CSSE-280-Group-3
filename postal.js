@@ -5,13 +5,6 @@ let criterias = [];
 const categoryElements = document.querySelectorAll("div#categoryDropdown div#subCategory");
 let categories = [];
 
-const express = require('express');
-const fs = require('fs').promises;
-const app = express();
-app.use(express.json());
-app.use(express.static('public'));
-const resourcesFilePath = './data/realResources.json';
-
 for (const elem of categoryElements){
     checkBox = elem.children[0];
     checkBox.addEventListener('click', function() {
@@ -41,37 +34,6 @@ searchButton.addEventListener('click', function() {
         console.log(`Criteria: ${criteria.criteria}`);
     }
 });
-
-// Fetch the data using criterias (list of locations) and categories (taxonomy)
-function readResources() {
-    try {
-        // Add criteria and categories
-        const data = fs.readFile(resourcesFilePath, 'utf-8');
-        return JSON.parse(data);
-    } catch (error) {
-        console.error('Error reading resources:', error);
-        return [];
-    }
-}
-
-// function/for look to create a bunch of cards
-function createCardsList() {
-    readResources();
-    
-}
-
-// function to create a single card and populate it
-
-// function to append all cards to html
-
-// function to put all selected into document to export
-    // if none are selected, have text be to export all
-    // if some are selected, have text be to export only the selected
-
-// button listener to select all/none
-
-
-
 
 function drawCriteriaRectangle(criteria) {
 
