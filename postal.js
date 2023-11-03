@@ -53,6 +53,7 @@ searchButton.addEventListener('click', function() {
     for (const category of categories){
         console.log(`Category: ${category}`);
     }
+    readResources();
 });
 
 function drawCriteriaRectangle(criteria) {
