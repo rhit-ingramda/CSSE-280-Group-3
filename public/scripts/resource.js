@@ -40,7 +40,10 @@ function filterResources(resources) {
 
 function createResourceCards(resources) {
     for (const resource of resources) {
-        resourcesContainer.appendChild(createCard(resource));
+        console.log(resource);
+        const resourceCard = createCard(resource)
+        console.log(resourceCard);
+        resourcesContainer.appendChild(resourceCard);
         // const card = document.createElement('div');
         // card.className = 'card resourceCard';
         // createCardHeader(resource, card)
@@ -66,12 +69,12 @@ function createCard(resource) {
         </div>
         <div class="card-body row">
             <div class="col-lg-8">
-                <p class="card-text agency-description">About the agency: ${resource.agency_description}</p>
+                <p class="card-text agency-description">About the agency: ${resource.agency_desc}</p>
                 <p class="card-text service-description">Services: ${resource.service_description}</p>
                 <ul>
                     <li>Application process: ${resource.site_details}</li>
                     <li>Elgibility: ${resource.site_eligibility}</li>
-                    <li>Document: Photo ID -- Proof of resodency</li>
+                    <li>Document: Photo ID -- Proof of residency</li>
                 </ul>
             </div>
             <div class="col-lg-4">
@@ -81,6 +84,7 @@ function createCard(resource) {
             <a href="#" class="btn btn-primary see-more">See less</a>
         </div>
     `;
+    return card;
 }
 
 // Creates card header and appends it to the card (CURRENTLY UNUSED)
