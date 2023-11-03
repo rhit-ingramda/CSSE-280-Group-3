@@ -9,8 +9,10 @@ const readResources = async () => {
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }
+    // Need to catch the promises
     resources = await response.json();
     resources = filterResources(resources);
+    console.log(resources);
     createResourceCards(resources);
     console.log(resources);
 }
