@@ -1,5 +1,6 @@
 const locationSearchBox = document.getElementById('postal');
 const searchButton = document.getElementById('searchButton');
+const introText = document.getElementById('introText');
 let criterias = [];
 
 const categoryElements = document.querySelectorAll("div#categoryDropdown div#subCategory");
@@ -53,6 +54,7 @@ searchButton.addEventListener('click', function() {
     for (const category of categories){
         console.log(`Category: ${category}`);
     }
+    hideIntroText();
     readResources();
 });
 
@@ -105,4 +107,7 @@ function removeCategory(categoryToRemove) {
     })
 }
 
-
+// Hides the introductory text when first search is performed.
+function hideIntroText() {
+    introText.hidden = true;
+}

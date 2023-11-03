@@ -2,7 +2,6 @@ const resourcesFilePath = './data/realResources.json';
 
 let resources = [];
 const resourcesContainer = document.getElementById('resourcesContainer');
-const introText = document.getElementById('introText');
 
 const readResources = async () => {
     console.log("reading");
@@ -12,7 +11,6 @@ const readResources = async () => {
     }
     // Need to catch the promises
     resources = await response.json();
-    hideIntroText();
     resources = filterResources(resources);
     console.log(resources);
     createResourceCards(resources);
@@ -87,11 +85,6 @@ function createCard(resource) {
         </div>
     `;
     return card;
-}
-
-// Hides the introductory text when first search is performed.
-function hideIntroText() {
-    introText.hidden = true;
 }
 
 // Creates card header and appends it to the card (CURRENTLY UNUSED)
