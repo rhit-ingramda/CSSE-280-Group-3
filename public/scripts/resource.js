@@ -14,6 +14,7 @@ const readResources = async () => {
     resources = filterResourcesByCriteria(resources);
     resources = filterResourcesByCategory(resources);
     console.log(resources);
+    clearResources();
     createResourceCards(resources);
 }
 
@@ -77,11 +78,6 @@ function createResourceCards(resources) {
     for (const resource of resources) {
         const resourceCard = createCard(resource)
         resourcesContainer.appendChild(resourceCard);
-        // const card = document.createElement('div');
-        // card.className = 'card resourceCard';
-        // createCardHeader(resource, card)
-        // createCardBody(resource, card);
-        // resourcesContainer.appendChild(card);
     }
 }
 
@@ -117,4 +113,14 @@ function createCard(resource) {
         </div>
     `;
     return card;
+}
+
+
+function clearResources() {
+    console.log(resourcesContainer.childNodes);
+    while (resourcesContainer.firstChild) {
+        resourcesContainer.removeChild(resourcesContainer.firstChild);
+      }
+
+    console.log('After removing:', resourcesContainer.childNodes);
 }
