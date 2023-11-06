@@ -86,14 +86,12 @@ function createCard(resource) {
     const card = document.createElement('div');
     card.className = 'card resourceCard';
     card.innerHTML = `
-        <div class="card-header">
-            <div id="resource-header" class="row">
-                <div class="col-sm-1">
-                    <input class="form-check-input" type="checkbox" value="">
-                </div>
-                <div class="col-sm-11">
-                    <h2 class="resource-name">${resource.agency_name}</h2>
-                </div>
+        <div class="card-header row">
+            <div class="col-sm-1">
+                <input class="form-check-input" type="checkbox" value="">
+            </div>
+            <div class="col-sm-11">
+                <h2 class="resource-name">${resource.agency_name}</h2>
             </div>
         </div>
         <div class="card-body row">

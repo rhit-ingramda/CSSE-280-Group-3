@@ -49,17 +49,19 @@ body{
     width: auto;
 }
 
-#resource-header{
-    height: 30px;
-}
-
-.card-header{
-    padding-top: 0px !important;
-}
-
 #resource-checkbox{
     scale: 2;
     margin-top: 10px !important;
+}
+
+#buttonRow {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 #filterCheckbox{
