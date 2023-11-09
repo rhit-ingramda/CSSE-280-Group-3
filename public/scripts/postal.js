@@ -13,6 +13,17 @@ for (const elem of categoryElements){
 }
 let categories = [];
 
+// Listener for printing, adds in categories and criteria for what is printed
+document.getElementById('exportButton').addEventListener('click', function () {
+    const printTextContainer = document.getElementById('printText');
+    const criteriaList = [];
+    for (const criteria of criterias){
+        criteriaList.push(criteria.criteria);
+    }
+    printTextContainer.innerHTML = `Locations: ${criteriaList}<br>Categories: ${categories}`;
+    window.print();
+});
+
 for (const obj of categoryObjects){
     checkBox = obj.elem.children[0];
     checkBox.addEventListener('click', function() {

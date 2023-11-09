@@ -1,0 +1,9 @@
+/* For if I want to just set printable things, and ignore rest*/
+/* body {display:none;}
+.print {display:block;}
+.onlyPrint {display:block;} */
+/* body {visibility:hidden; max-height:0;}
+.print {visibility:visible;}
+.onlyPrint {visibility:visible;} */
+
+.no-print {display:none;}
