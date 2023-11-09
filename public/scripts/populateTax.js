@@ -35,7 +35,6 @@ var populateTax = {
                                                                                 'Case/Care Management',
                                                                                 'Youth Enrichment Programs',
                                                                                 'City/County Parks',
-                                                                                'City/County Parks',
                                                                                 'Parenting Education',
                                                                                 'Health/Disability Related Support Groups',
                                                                                 'Animal Adoption',
@@ -53,17 +52,19 @@ var populateTax = {
     dropdownElem: document.getElementById('dropdownRow'),
     populate: function () {for(const category of populateTax.categories){
         let htmlString = `<div id="categoryDropdown" class="dropdown col">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
-                          ${category.mainCategory}
-                          </button>
-                          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">`
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            ${category.mainCategory}
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">`;
         for(const subCategory of category.subCategories){
-            htmlString = htmlString + `<li class="row dropdown-item">
-                                       <div id="subCategory" class="col-sm-1">
-                                            <input type="checkbox" class="form-check-input" value="" id="${subCategory}Checkbox">
-                                            <label class="form-check-label" for="${subCategory}Checkbox">${subCategory}</label>
-                                       </div>
-                                       </li>`
+            htmlString = htmlString + `<li class="row">
+                                        <a class="dropdown-item">
+                                            <div id="subCategory" class="form-check">
+                                                <input type="checkbox" class="form-check-input" value="" id="${subCategory}Checkbox">
+                                                <label class="form-check-label" for="${subCategory}Checkbox">${subCategory}</label>
+                                            </div>
+                                        </a>
+                                       </li>`;
         }
         htmlString = htmlString + '</ul></div>';
         populateTax.dropdownElem.insertAdjacentHTML('beforeend',htmlString);
