@@ -28,6 +28,9 @@
     .see-more {
         visibility: hidden;
     }
+    .hideOnPrint {
+        display: none;
+    }
   }
 
 .navbar{

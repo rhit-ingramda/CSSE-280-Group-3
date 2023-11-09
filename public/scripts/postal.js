@@ -14,19 +14,14 @@ for (const elem of categoryElements){
 }
 let categories = [];
 
-// Listener for printing, adds in categories and criteria for what is printed
-exportButton.addEventListener('click', function () {
-    window.print();
-});
-
 for (const obj of categoryObjects){
     checkBox = obj.elem.children[0];
     checkBox.addEventListener('click', function() {
         //change the state of the checkBox
         obj.isChecked = !obj.isChecked;
         console.log(obj.isChecked);
-        console.log(obj.elem.childNodes[3].innerHTML);
         text = obj.elem.childNodes[3].innerHTML;
+        console.log(text);
         //get the plain text of the category whose checkBox has been clicked
         //if the checkBox has been checked...
         if (obj.isChecked){
