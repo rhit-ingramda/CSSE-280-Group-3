@@ -42,8 +42,10 @@ function filterResourcesByCriteria(resources) {
 function filterResourcesByCategory(resources) {
     console.log(categories);
     if(categories.length == 0){
+        // when no categories are selected, return all the resources
         return resources;
     } else{
+        // filter resources based on criteria and categories
         resources = resources.filter(function(resource) {
             meetsCriteria = false;
             for(const category of categories){
@@ -70,6 +72,7 @@ function filterResourcesByCategory(resources) {
             }
             return meetsCriteria;
         })
+        // return filtered resources
         return resources;
     }
 }
