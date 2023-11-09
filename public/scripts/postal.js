@@ -16,12 +16,6 @@ let categories = [];
 
 // Listener for printing, adds in categories and criteria for what is printed
 exportButton.addEventListener('click', function () {
-    const printTextContainer = document.getElementById('printText');
-    const criteriaList = [];
-    for (const criteria of criterias){
-        criteriaList.push(criteria.criteria);
-    }
-    printTextContainer.innerHTML = `Locations: ${criteriaList}<br>Categories: ${categories}`;
     window.print();
 });
 
@@ -74,6 +68,7 @@ searchButton.addEventListener('click', function() {
     }
     hideIntroText();
     showExportButton();
+    updateSearchTerms();
     readResources();
 });
 
@@ -134,4 +129,13 @@ function hideIntroText() {
 // Shows export button when first search is performed.
 function showExportButton() {
     exportButton.hidden = false;
+}
+
+function updateSearchTerms() {
+    const printTextContainer = document.getElementById('printText');
+    const criteriaList = [];
+    for (const criteria of criterias){
+        criteriaList.push(criteria.criteria);
+    }
+    printTextContainer.innerHTML = `Locations: ${criteriaList}<br>Categories: ${categories}`;
 }
