@@ -35,6 +35,24 @@
           padding: 10px 20px; /* Add some padding to the button for better visibility */
           cursor: pointer;
         }
+
+        .cover {
+    background-image: url('images/indianapolis.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover h1 {
+    font-size: 36px;
+    color: skyblue;
+    text-shadow: 2px 2px 4px #000000;
+}
       </style>
     <title>IN 211</title>
 </head>
@@ -49,13 +67,27 @@
     <img src="">
 
 
-    <div class="container">
+   
         <!-- Image -->
-        <img class="image" src="images/indianapolis.jpg" alt="indianapolis">
-      
+        <div class="cover">
+          <h1>Welcome to IN 2-1-1!</h1>
+          <h1>IN 2-1-1 is your front door to state and local resources.</h1>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <button class="button" onclick="window.location.href='index.html'">Get Started</button>
+          
+        </div>
         <!-- Button placed over the image -->
-        <button class="button" onclick="window.location.href='index.html'">Get Started</button>
-      </div>
+        
+    
 
 
     <!-- <div class="row">
