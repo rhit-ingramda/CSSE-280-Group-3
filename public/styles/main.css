@@ -11,9 +11,21 @@
 /* For elements that only get printed (not on main page) */
 @media screen {
     .only-print {
-        display: none;
+        visibility: hidden;
     }
 }
+
+@media print {
+    body {
+      visibility: hidden;
+    }
+    #sectionToPrint {
+      visibility: visible;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
 
 .navbar{
     background-color: var(--dark_blue);
