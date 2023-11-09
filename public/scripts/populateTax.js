@@ -57,7 +57,7 @@ var populateTax = {
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">`;
         for(const subCategory of category.subCategories){
-            htmlString = htmlString + `<li class="row">
+            htmlString = htmlString + `<li>
                                         <a class="dropdown-item">
                                             <div id="subCategory" class="form-check">
                                                 <input type="checkbox" class="form-check-input" value="" id="${subCategory}Checkbox">
