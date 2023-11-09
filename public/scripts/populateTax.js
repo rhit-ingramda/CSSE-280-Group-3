@@ -53,7 +53,7 @@ var populateTax = {
     dropdownElem: document.getElementById('dropdownRow'),
     populate: function () {for(const category of populateTax.categories){
         let htmlString = `<div id="categoryDropdown" class="dropdown col">
-                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
                           ${category.mainCategory}
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">`
