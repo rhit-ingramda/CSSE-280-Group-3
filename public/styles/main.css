@@ -43,9 +43,10 @@
     color: var(--black);
 }
 
-.dropdown-submenu{
+.dropdown-menu{
     background-color: var(--light_blue);
     color: var(--black);
+    padding: 0;
 }
 
 .dropdown-item{
