@@ -1,6 +1,7 @@
 const locationSearchBox = document.getElementById('postal');
 const searchButton = document.getElementById('searchButton');
 const introText = document.getElementById('introText');
+const exportButton = document.getElementById('exportButton');
 let criterias = [];
 populateTax.populate();
 const categoryElements = document.querySelectorAll("div#categoryDropdown div#subCategory");
@@ -14,7 +15,7 @@ for (const elem of categoryElements){
 let categories = [];
 
 // Listener for printing, adds in categories and criteria for what is printed
-document.getElementById('exportButton').addEventListener('click', function () {
+exportButton.addEventListener('click', function () {
     const printTextContainer = document.getElementById('printText');
     const criteriaList = [];
     for (const criteria of criterias){
@@ -73,6 +74,7 @@ searchButton.addEventListener('click', function() {
         console.log(`Category: ${category}`);
     }
     hideIntroText();
+    showExportButton();
     readResources();
 });
 
@@ -128,4 +130,9 @@ function removeCategory(categoryToRemove) {
 // Hides the introductory text when first search is performed.
 function hideIntroText() {
     introText.hidden = true;
+}
+
+// Shows export button when first search is performed.
+function showExportButton() {
+    exportButton.hidden = false;
 }

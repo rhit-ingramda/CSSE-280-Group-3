@@ -9,6 +9,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css' integrity='sha512-AZtJoEn5SfSZimv10x5NMO2gaZCdoU8nxtHJK8O4SbKNlQeb1ggkvf0b0QixuuXIjX3Tp5jzBbTWajki81Vl2g==' crossorigin='anonymous'/>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css' integrity='sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==' crossorigin='anonymous' />
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/print.css" type="text/css" media="print">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>IN 211</title>
 </head>
@@ -22,7 +23,7 @@
     </nav>
 
     <div id="rowSelect" class="row bg-secondary d-flex justify-content-center">
-        <div class="rowno-print">
+        <div class="row no-print">
             <div class="col-4 text-center">
                 <!-- Accept zip code, county, or city -->
                 <h4 class="fw-bold">Enter zip code, county, or city here:</h4>
@@ -58,7 +59,7 @@
             <div class="col-md-4 col"></div>
             <div class="col-md-4 col"></div>
             <div class="col-md-4 col">
-                <div id="exportButton" class="btn">Export</div>
+                <div id="exportButton" class="btn" hidden="true">Export</div>
             </div>
         </div>
         <div id="sectionToPrint">

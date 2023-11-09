@@ -103,11 +103,11 @@ function createCard(resource) {
                 <p><b>Schedule:</b> ${resource.site_schedule}</p>
                 <ul>
                     <li><b>Application process:</b> ${resource.site_details}</li>
-                    <li><b>Elgibility:</b> ${resource.site_eligibility}</li>
+                    <li><b>Eligibility:</b> ${resource.site_eligibility}</li>
                 </ul>
             </div>
 
-            <a href="#" class="btn btn-primary see-more">See less</a>
+            <button href="#" class="btn btn-primary see-more">See less</button>
         </div>
     `;
     return card;

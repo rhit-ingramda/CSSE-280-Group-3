@@ -25,6 +25,9 @@
       left: 0;
       top: 0;
     }
+    .see-more {
+        visibility: hidden;
+    }
   }
 
 .navbar{
