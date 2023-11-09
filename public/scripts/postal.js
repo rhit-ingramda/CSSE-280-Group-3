@@ -27,7 +27,7 @@ exportButton.addEventListener('click', function () {
 
 for (const obj of categoryObjects){
     checkBox = obj.elem.children[0];
-    obj.elem.addEventListener('click', function() {
+    checkBox.addEventListener('click', function() {
         //change the state of the checkBox
         obj.isChecked = !obj.isChecked;
         console.log(obj.isChecked);
