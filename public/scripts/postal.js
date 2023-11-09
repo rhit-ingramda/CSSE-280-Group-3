@@ -31,13 +31,12 @@ for (const obj of categoryObjects){
         //change the state of the checkBox
         obj.isChecked = !obj.isChecked;
         console.log(obj.isChecked);
-        console.log(obj.elem);
+        console.log(obj.elem.childNodes[3].innerHTML);
+        text = obj.elem.childNodes[3].innerHTML;
         //get the plain text of the category whose checkBox has been clicked
-        text = obj.elem.childNodes[2].data.trim();
         //if the checkBox has been checked...
         if (obj.isChecked){
             console.log(obj.elem.childNodes[2]); // no clue what this is supposed to be
-            text = obj.elem.childNodes[2].data.trim();
             if(text == 'Other'){
                 // if this category is 'other', get the parent category and tag the category with it for filtering
                 superCategory = obj.elem.parentNode.parentNode.parentNode.childNodes[1].innerText; // no clue how to get this back to working

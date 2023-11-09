@@ -78,6 +78,10 @@ function filterResourcesByCategory(resources) {
 }
 
 function createResourceCards(resources) {
+    if(resources.length == 0){
+        const text = 'Sorry, no resources are available with the selected filters';
+        
+    }
     for (const resource of resources) {
         const resourceCard = createCard(resource)
         resourcesContainer.appendChild(resourceCard);
