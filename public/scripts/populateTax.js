@@ -58,11 +58,12 @@ var populateTax = {
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">`
         for(const subCategory of category.subCategories){
-            htmlString = htmlString + `<div class="row dropdown-item">
+            htmlString = htmlString + `<li class="row dropdown-item">
                                        <div id="subCategory" class="col-sm-1">
-                                       <input class="form-check-input" type="checkbox" value="">${subCategory}
+                                            <input type="checkbox" class="form-check-input" value="" id="${subCategory}Checkbox">
+                                            <label class="form-check-label" for="${subCategory}Checkbox">${subCategory}</label>
                                        </div>
-                                       </div>`
+                                       </li>`
         }
         htmlString = htmlString + '</ul></div>';
         populateTax.dropdownElem.insertAdjacentHTML('beforeend',htmlString);
