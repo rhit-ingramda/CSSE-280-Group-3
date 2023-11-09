@@ -87,11 +87,22 @@ function filterResourcesByCategory(resources) {
 function createResourceCards(resources) {
     if(resources.length == 0){
         const text = 'Sorry, no resources are available with the selected filters';
-        
+
     }
     let i = 0;
     for (const resource of resources) {
-        const resourceCard = createCard(resource, i)
+        const resourceCard = createCard(resource);
+        const seeMoreButton = resourceCard.childNodes[3].childNodes[5];
+        seeMoreButton.innerText = 'See More';
+        seeMoreButton.addEventListener('click', function() {
+            resourceCard.childNodes[3].childNodes[1].childNodes[3].hidden = !resourceCard.childNodes[3].childNodes[1].childNodes[3].hidden; //service description
+            resourceCard.childNodes[3].childNodes[3].childNodes[3].hidden = !resourceCard.childNodes[3].childNodes[3].childNodes[3].hidden; //application process and elgibility
+            if(seeMoreButton.innerText == 'SEE MORE'){
+                seeMoreButton.innerHTML = 'See Less';
+            } else{
+                seeMoreButton.innerHTML = 'See More';
+            }
+        })
         resourcesContainer.appendChild(resourceCard);
         i++;
         resourceCards.push(resourceCard);
@@ -112,18 +123,18 @@ function createCard(resource, i) {
         </div>
         <div class="card-body row">
             <div class="col-lg-8">
-                <p class="card-text agency-description"><b>About the agency:</b> ${resource.agency_desc}</p>
-                <p class="card-text service-description"><b>Services:</b> ${resource.service_description}</p>
+                <p class="card-text agency-description" ><b>About the agency:</b> ${resource.agency_desc}</p>
+                <p class="card-text service-description" hidden><b>Services:</b> ${resource.service_description}</p>
             </div>
             <div class="col-lg-4">
                 <p><b>Schedule:</b> ${resource.site_schedule}</p>
-                <ul>
+                <ul hidden>
                     <li><b>Application process:</b> ${resource.site_details}</li>
                     <li><b>Eligibility:</b> ${resource.site_eligibility}</li>
                 </ul>
             </div>
 
-            <button href="#" class="btn btn-primary see-more">See less</button>
+            <button href="#" class="btn btn-primary see-more">See More</button>
         </div>
     `;
     return card;
