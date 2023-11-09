@@ -9,11 +9,11 @@
 }
 
 /* For elements that only get printed (not on main page) */
-@media screen {
+/* @media screen {
     .only-print {
         visibility: hidden;
     }
-}
+} */
 
 @media print {
     body {
@@ -25,9 +25,9 @@
       left: 0;
       top: 0;
     }
-    .see-more {
+    /* .see-more {
         visibility: hidden;
-    }
+    } */
     .hideOnPrint {
         display: none;
     }

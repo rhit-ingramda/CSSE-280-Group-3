@@ -87,11 +87,11 @@ function filterResourcesByCategory(resources) {
 function createResourceCards(resources) {
     if(resources.length == 0){
         const text = 'Sorry, no resources are available with the selected filters';
-
+        resourcesContainer.innerHTML = text;
     }
     let i = 0;
     for (const resource of resources) {
-        const resourceCard = createCard(resource);
+        const resourceCard = createCard(resource, i);
         const seeMoreButton = resourceCard.childNodes[3].childNodes[5];
         seeMoreButton.innerText = 'See More';
         seeMoreButton.addEventListener('click', function() {

@@ -132,5 +132,5 @@ function updateSearchTerms() {
     for (const criteria of criterias){
         criteriaList.push(criteria.criteria);
     }
-    printTextContainer.innerHTML = `Locations: ${criteriaList}<br>Categories: ${categories}`;
+    printTextContainer.innerHTML = `<p>Search Locations: ${criteriaList}</p><p>Search Categories: ${categories}</p>`;
 }
