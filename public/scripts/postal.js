@@ -2,6 +2,7 @@ const locationSearchBox = document.getElementById('postal');
 const searchButton = document.getElementById('searchButton');
 const introText = document.getElementById('introText');
 const exportButton = document.getElementById('exportButton');
+const exportAsCSVButton = document.getElementById('exportAsCSVButton');
 const expandAllButton = document.getElementById('expandAllButton');
 let criterias = [];
 populateTax.populate();
@@ -132,7 +133,9 @@ function hideIntroText() {
 // Shows export button when first search is performed.
 function showExportButton() {
     exportButton.hidden = false;
+    exportAsCSVButton.hidden = false;
     expandAllButton.hidden = false;
+
 
 }
 
