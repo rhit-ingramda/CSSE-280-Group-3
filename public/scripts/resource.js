@@ -6,8 +6,16 @@ const resourcesContainer = document.getElementById('resourcesContainer');
 
 // Listener for printing, adds in categories and criteria for what is printed
 exportButton.addEventListener('click', function () {
-    hideUncheckedResources()
+    hideUncheckedResources();
     window.print();
+});
+
+expandAllButton.addEventListener('click', function(){
+    const seeMoreButtons = document.querySelectorAll('.see-more');
+    for(btn of seeMoreButtons){
+        btn.dispatchEvent(new Event('click'));
+    }
+
 });
 
 const readResources = async () => {
@@ -134,7 +142,7 @@ function createCard(resource, i) {
                 </ul>
             </div>
 
-            <button href="#" class="btn btn-primary see-more">See More</button>
+            <button href="#" class="btn btn-primary see-more d-print-none">See More</button>
         </div>
     `;
     return card;
