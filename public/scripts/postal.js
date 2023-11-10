@@ -2,6 +2,7 @@ const locationSearchBox = document.getElementById('postal');
 const searchButton = document.getElementById('searchButton');
 const introText = document.getElementById('introText');
 const exportButton = document.getElementById('exportButton');
+const expandAllButton = document.getElementById('expandAllButton');
 let criterias = [];
 populateTax.populate();
 const categoryElements = document.querySelectorAll("div#categoryDropdown div#subCategory");
@@ -55,6 +56,10 @@ postal.addEventListener('keypress', function (e) {
 });
 
 searchButton.addEventListener('click', function() {
+    if(locationSearchBox.value != ''){
+        criterias.push({criteria: locationSearchBox.value,
+                        element: null});
+    }
     for (const criteria of criterias){
         console.log(`Criteria: ${criteria.criteria}`);
     }
@@ -64,7 +69,10 @@ searchButton.addEventListener('click', function() {
     hideIntroText();
     showExportButton();
     updateSearchTerms();
-    readResources();
+    readResources(criterias, categories);
+    criterias = criterias.filter(function(criteria) {
+        return criteria.criteria != locationSearchBox.value;
+    })
 });
 
 function drawCriteriaRectangle(criteria) {
@@ -124,6 +132,8 @@ function hideIntroText() {
 // Shows export button when first search is performed.
 function showExportButton() {
     exportButton.hidden = false;
+    expandAllButton.hidden = false;
+
 }
 
 function updateSearchTerms() {

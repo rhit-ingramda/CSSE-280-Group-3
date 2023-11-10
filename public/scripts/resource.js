@@ -18,7 +18,7 @@ expandAllButton.addEventListener('click', function(){
 
 });
 
-const readResources = async () => {
+const readResources = async (criterias, categories) => {
     console.log("reading");
     const response = await fetch(resourcesFilePath);
     if (!response.ok) {
@@ -26,14 +26,14 @@ const readResources = async () => {
     }
     // Need to catch the promises
     resources = await response.json();
-    resources = filterResourcesByCriteria(resources);
-    resources = filterResourcesByCategory(resources);
+    resources = filterResourcesByCriteria(resources, criterias);
+    resources = filterResourcesByCategory(resources, categories);
     console.log(resources);
     clearResources();
     createResourceCards(resources);
 }
 
-function filterResourcesByCriteria(resources) {
+function filterResourcesByCriteria(resources, criterias) {
     console.log(criterias);
     if(criterias.length == 0){
         return resources;
@@ -54,7 +54,7 @@ function filterResourcesByCriteria(resources) {
     }
 }
 
-function filterResourcesByCategory(resources) {
+function filterResourcesByCategory(resources, categories) {
     console.log(categories);
     if(categories.length == 0){
         // when no categories are selected, return all the resources
@@ -127,6 +127,7 @@ function createCard(resource, i) {
             <div id="subCategory" class="form-check">
                 <input type="checkbox" class="form-check-input" value="" id="resourceCheckbox${i}">
                 <label class="form-check-label" for="resourceCheckbox${i}">${resource.agency_name}</label>
+                <a id="row" href="${resource.service_website}" target="_blank">${resource.service_website}</a>
             </div>
         </div>
         <div class="card-body row">
