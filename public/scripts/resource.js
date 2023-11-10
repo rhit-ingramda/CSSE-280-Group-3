@@ -18,6 +18,27 @@ expandAllButton.addEventListener('click', function(){
 
 });
 
+exportAsCSVButton.addEventListener('click', function() {
+    let csv = resources.map(function(d){
+        return JSON.stringify(Object.values(d));
+    })
+    .join('\n') 
+    .replace(/(^\[)|(\]$)/mg, '');
+    const headers = 'agency_id,site_id,agency_name,agency_desc,site_name,address_1,address_2,city,zipcode,county,state_province,latitude,longitude,site_number,service_id,service_name,service_description,taxonomy_code,taxonomy_name,taxonomy_category,nameLevel2,nameLevel3,nameLevel4,nameLevel5,service_email,service_website,status,site_details,site_schedule,site_eligibility,createdon,lastupdated,lastVerified'
+    csv = headers + csv;
+    console.log(csv);
+    var downloadLink = document.createElement("a");
+    var blob = new Blob(["\ufeff", csv]);
+    var url = URL.createObjectURL(blob);
+    downloadLink.href = url;
+    downloadLink.download = "data.csv";
+
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+});
+
 const readResources = async (criterias, categories) => {
     console.log("reading");
     const response = await fetch(resourcesFilePath);

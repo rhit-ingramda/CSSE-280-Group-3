@@ -57,7 +57,7 @@
     color: var(--black);
 }
 
-#exportButton, #expandAllButton{
+#exportButton, #expandAllButton, #exportAsCSVButton{
     background-color: var(--light_blue);
     color: var(--black);
 }
