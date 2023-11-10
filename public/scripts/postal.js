@@ -142,5 +142,7 @@ function updateSearchTerms() {
     for (const criteria of criterias){
         criteriaList.push(criteria.criteria);
     }
-    printTextContainer.innerHTML = `<p>Search Locations: ${criteriaList}</p><p>Search Categories: ${categories}</p>`;
+    const today = new Date();
+    const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    printTextContainer.innerHTML = `<p>Indiana 211 resource data as of ${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}</p><p><p>Search Locations: ${criteriaList}</p><p>Search Categories: ${categories}</p>`;
 }
