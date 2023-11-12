@@ -7,8 +7,17 @@ let checkedResources = 0;
 
 // Listener for printing, adds in categories and criteria for what is printed
 exportButton.addEventListener('click', function () {
-    hideUncheckedResources();
-    window.print();
+    if(checkedResources == 0){
+        for(const resource of resourceCards){
+            resource.className = 'card resourceCard';
+        }
+        window.print();
+        for(const resource of resourceCards){
+            resource.className = 'card resourceCard hideOnPrint';
+        }
+    } else{
+        window.print();
+    }
 });
 
 expandAllButton.addEventListener('click', function(){
@@ -137,7 +146,7 @@ function createResourceCards(resources) {
                 }
             })
             resourcesContainer.appendChild(resourceCard);
-            createResourceCheckboxListener(document.getElementById(`resourceCheckbox${i}`), resource);
+            createResourceCheckboxListener(document.getElementById(`resourceCheckbox${i}`), resourceCard);
             i++;
             resourceCards.push(resourceCard);
         }
@@ -151,13 +160,13 @@ function createResourceCheckboxListener(checkBox, resource){
                 exportButton.innerHTML = 'Export Selected';
             }
             checkedResources++;
-            resource.className = 'card resourceCard hideOnPrint';
+            resource.className = 'card resourceCard';
         } else{
             checkedResources--;
             if(checkedResources == 0){
                 exportButton.innerHTML = 'Export All';
             }
-            resource.className = 'card resourceCard';
+            resource.className = 'card resourceCard hideOnPrint';
         }
     });
 }
@@ -165,7 +174,7 @@ function createResourceCheckboxListener(checkBox, resource){
 // Creates entire card using innerHTML
 function createCard(resource, i) {
     const card = document.createElement('div');
-    card.className = 'card resourceCard';
+    card.className = 'card resourceCard hideOnPrint';
     card.innerHTML = `
         <div class="card-header row">
             <div id="subCategory" class="form-check">
@@ -200,17 +209,4 @@ function clearResources() {
       }
       resourceCards = [];
     console.log('After removing:', resourcesContainer.childNodes);
-}
-
-function hideUncheckedResources() {
-    const selectedResources = [];
-    let i = 0;
-    for (const resource of resourceCards) {
-        if (!document.getElementById(`resourceCheckbox${i}`).checked) {
-            resource.className = 'card resourceCard hideOnPrint';
-        } else {
-            resource.className = 'card resourceCard';
-        }
-        i++;
-    }
 }
