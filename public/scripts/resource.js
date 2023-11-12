@@ -115,28 +115,32 @@ function filterResourcesByCategory(resources, categories) {
 }
 
 function createResourceCards(resources) {
+    const resourceNames = new Set();
     if(resources.length == 0){
         const text = 'Sorry, no resources are available with the selected filters';
         resourcesContainer.innerHTML = text;
     }
     let i = 0;
     for (const resource of resources) {
-        const resourceCard = createCard(resource, i);
-        const seeMoreButton = resourceCard.childNodes[3].childNodes[5];
-        seeMoreButton.innerText = 'See More';
-        seeMoreButton.addEventListener('click', function() {
-            resourceCard.childNodes[3].childNodes[1].childNodes[3].hidden = !resourceCard.childNodes[3].childNodes[1].childNodes[3].hidden; //service description
-            resourceCard.childNodes[3].childNodes[3].childNodes[3].hidden = !resourceCard.childNodes[3].childNodes[3].childNodes[3].hidden; //application process and elgibility
-            if(seeMoreButton.innerText == 'SEE MORE'){
-                seeMoreButton.innerHTML = 'See Less';
-            } else{
-                seeMoreButton.innerHTML = 'See More';
-            }
-        })
-        resourcesContainer.appendChild(resourceCard);
-        createResourceCheckboxListener(document.getElementById(`resourceCheckbox${i}`), resource);
-        i++;
-        resourceCards.push(resourceCard);
+        if(!resourceNames.has(resource.agency_name)){
+            resourceNames.add(resource.agency_name);
+            const resourceCard = createCard(resource, i);
+            const seeMoreButton = resourceCard.childNodes[3].childNodes[5];
+            seeMoreButton.innerText = 'See More';
+            seeMoreButton.addEventListener('click', function() {
+                resourceCard.childNodes[3].childNodes[1].childNodes[3].hidden = !resourceCard.childNodes[3].childNodes[1].childNodes[3].hidden; //service description
+                resourceCard.childNodes[3].childNodes[3].childNodes[3].hidden = !resourceCard.childNodes[3].childNodes[3].childNodes[3].hidden; //application process and elgibility
+                if(seeMoreButton.innerText == 'SEE MORE'){
+                    seeMoreButton.innerHTML = 'See Less';
+                } else{
+                    seeMoreButton.innerHTML = 'See More';
+                }
+            })
+            resourcesContainer.appendChild(resourceCard);
+            createResourceCheckboxListener(document.getElementById(`resourceCheckbox${i}`), resource);
+            i++;
+            resourceCards.push(resourceCard);
+        }
     }
 }
 
