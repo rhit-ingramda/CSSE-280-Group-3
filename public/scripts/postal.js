@@ -147,5 +147,9 @@ function updateSearchTerms() {
     }
     const today = new Date();
     const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    printTextContainer.innerHTML = `<p>Indiana 211 resource data as of ${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}</p><p><p>Search Locations: ${criteriaList}</p><p>Search Categories: ${categories}</p>`;
+
+    const header = document.getElementById('header');
+    printTextContainer.innerHTML = `<p><p>Search Locations: ${criteriaList}</p><p>Search Categories: ${categories}</p>`;
+    header.innerHTML = `<b>Indiana 211 resource data as of ${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}</b>`;
+    footer.innerHTML = `<b>As of ${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}, the list provided is the most up to date information available to Indiana 211 for the types and locations of resources selected.  Note that resource information updates are made regularly and it always best to go back to the source of truth for updated information</b>`
 }

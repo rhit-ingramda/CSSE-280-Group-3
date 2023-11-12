@@ -3,6 +3,7 @@ const resourcesFilePath = './data/realResources.json';
 let resources = [];
 let resourceCards = [];
 const resourcesContainer = document.getElementById('resourcesContainer');
+let checkedResources = 0;
 
 // Listener for printing, adds in categories and criteria for what is printed
 exportButton.addEventListener('click', function () {
@@ -133,10 +134,28 @@ function createResourceCards(resources) {
             }
         })
         resourcesContainer.appendChild(resourceCard);
+        createResourceCheckboxListener(document.getElementById(`resourceCheckbox${i}`), resource);
         i++;
         resourceCards.push(resourceCard);
     }
-    
+}
+
+function createResourceCheckboxListener(checkBox, resource){
+    checkBox.addEventListener('click', function() {
+        if(checkBox.checked){
+            if(checkedResources == 0){
+                exportButton.innerHTML = 'Export Selected';
+            }
+            checkedResources++;
+            resource.className = 'card resourceCard hideOnPrint';
+        } else{
+            checkedResources--;
+            if(checkedResources == 0){
+                exportButton.innerHTML = 'Export All';
+            }
+            resource.className = 'card resourceCard';
+        }
+    });
 }
 
 // Creates entire card using innerHTML
@@ -180,6 +199,7 @@ function clearResources() {
 }
 
 function hideUncheckedResources() {
+    const selectedResources = [];
     let i = 0;
     for (const resource of resourceCards) {
         if (!document.getElementById(`resourceCheckbox${i}`).checked) {

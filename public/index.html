@@ -53,17 +53,32 @@
         </div>
 
         <div id="buttonRow" class="container-fluid row">
-            <div class="col-md-4 col"></div>
-            <div class="col-md-4 col"></div>
-            <div class="col-md-4 col">
-                <div id="exportButton" class="btn" hidden="true">Export</div>
+            <div class="col-md-3 col">
+                <div id="exportButton" class="btn" hidden="true">Export All</div>
+            </div>
+            <div class="col-md-3 col">
                 <div id="exportAsCSVButton" class="btn" hidden="true">Export As CSV</div>
+            </div>
+            <div class="col-md-3 col">
                 <div id="expandAllButton" class="btn" hidden="true">Expand All</div>
             </div>
+
         </div>
         <div id="sectionToPrint">
             <div id="printText" class="only-print"><!-- Text Here Only Shows Up When Printing--></div>
-            <div id="resourcesContainer" class="container-fluid row"></div>    
+            <table>
+                <thead><tr><td>
+                  <div class="header-space">&nbsp;</div>
+                </td></tr></thead>
+                <tbody><tr><td>
+                    <div id="resourcesContainer" class="container-fluid row"></div>
+                </td></tr></tbody>
+                <tfoot><tr><td>
+                  <div class="footer-space">&nbsp;</div>
+                </td></tr></tfoot>
+              </table> 
+            <header id="header" class="divHeader only-print"></header>   
+            <footer id="footer" class="divFooter only-print"></footer>
         </div>
     </div>
 

@@ -24,6 +24,7 @@
       position: absolute;
       left: 0;
       top: 0;
+      margin-bottom: 50px;
     }
     /* .see-more {
         visibility: hidden;
@@ -57,7 +58,7 @@
     color: var(--black);
 }
 
-#exportButton, #expandAllButton, #exportAsCSVButton{
+#exportButton, #expandAllButton, #exportAsCSVButton, #exportAllButton{
     background-color: var(--light_blue);
     color: var(--black);
 }
@@ -128,3 +129,25 @@ body{
     margin-top: auto;
     margin-bottom: auto;
 }
+@media screen{
+    footer{
+        display:none
+    }
+}
+
+@media print {
+    footer {
+      position: fixed;
+      bottom: 0;
+    }
+
+    header {
+        position: fixed;
+        top: 0;
+      }
+  }
+
+  header, .header-space,
+  footer, .footer-space {
+    height: 100px;
+  }
